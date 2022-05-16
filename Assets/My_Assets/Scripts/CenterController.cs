@@ -1,6 +1,7 @@
 using Microsoft.MixedReality.Toolkit.UI;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CenterController : MonoBehaviour
@@ -14,6 +15,15 @@ public class CenterController : MonoBehaviour
 
     [SerializeField]
     private float positionWidth, rotationWidth;
+
+    [SerializeField]
+    private TextMeshPro x, y, z, Yrot;
+
+
+    private void Start()
+    {
+        UnityEngine.XR.XRSettings.renderViewportScale = 0.7f;
+    }
 
     public void RecenterPlayArea()
     {
@@ -37,6 +47,7 @@ public class CenterController : MonoBehaviour
                                 adjuster.localPosition.y,
                                 adjuster.localPosition.z);
         adjuster.localPosition = h;
+        x.text = $"{positionWidth * ratio:F2}";
     }
 
     public void AdjustY(SliderEventData data)
@@ -49,6 +60,7 @@ public class CenterController : MonoBehaviour
                                 positionWidth * ratio,
                                 adjuster.localPosition.z);
         adjuster.localPosition = h;
+        y.text = $"{positionWidth * ratio:F2}";
     }
 
     public void AdjustZ(SliderEventData data)
@@ -61,6 +73,7 @@ public class CenterController : MonoBehaviour
                                 adjuster.localPosition.y,
                                 positionWidth * ratio);
         adjuster.localPosition = h;
+        z.text = $"{positionWidth * ratio:F2}";
     }
 
     public void AdjustRotate(SliderEventData data)
@@ -69,6 +82,7 @@ public class CenterController : MonoBehaviour
         float ratio = value - 0.5f;
 
         adjuster.localRotation = Quaternion.Euler(0, rotationWidth * ratio, 0);
+        Yrot.text = $"{rotationWidth * ratio:F2}";
     }
 
     public void EnableStage(int stage)
