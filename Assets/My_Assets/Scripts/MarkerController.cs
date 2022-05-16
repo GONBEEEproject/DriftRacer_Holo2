@@ -15,16 +15,6 @@ public class MarkerController : MonoBehaviour
     {
         source = transform.root.GetComponent<AudioSource>();
         line = GetComponent<LineRenderer>();
-
-        Vector3[] positions = new Vector3[markarChain.Length];
-
-        for (int i = 0; i < markarChain.Length; i++)
-        {
-            positions[i] = markarChain[i].transform.position;
-        }
-        line.positionCount = positions.Length;
-        line.loop = true;
-        line.SetPositions(positions);
     }
 
     private void OnEnable()
@@ -35,6 +25,16 @@ public class MarkerController : MonoBehaviour
             markarChain[i].ChangeActivate(false);
         }
         markarChain[0].ChangeActivate(true);
+
+        Vector3[] positions = new Vector3[markarChain.Length];
+
+        for (int i = 0; i < markarChain.Length; i++)
+        {
+            positions[i] = markarChain[i].transform.position;
+        }
+        line.positionCount = positions.Length;
+        line.loop = true;
+        line.SetPositions(positions);
     }
 
     public void HitMarker(int i)

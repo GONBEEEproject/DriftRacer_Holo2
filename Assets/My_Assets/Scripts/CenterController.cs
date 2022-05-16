@@ -22,7 +22,7 @@ public class CenterController : MonoBehaviour
 
     private void Start()
     {
-        UnityEngine.XR.XRSettings.renderViewportScale = 0.7f;
+        //UnityEngine.XR.XRSettings.renderViewportScale = 0.7f;
     }
 
     public void RecenterPlayArea()
