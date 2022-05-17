@@ -26,6 +26,11 @@ public class MarkerController : MonoBehaviour
         }
         markarChain[0].ChangeActivate(true);
 
+        ResetLine();
+    }
+
+    public void ResetLine()
+    {
         Vector3[] positions = new Vector3[markarChain.Length];
 
         for (int i = 0; i < markarChain.Length; i++)

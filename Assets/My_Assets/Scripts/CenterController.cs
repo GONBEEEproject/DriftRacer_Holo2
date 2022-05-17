@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class CenterController : MonoBehaviour
 {
-
     [SerializeField]
     private Transform head, adjuster;
 
@@ -19,10 +18,21 @@ public class CenterController : MonoBehaviour
     [SerializeField]
     private TextMeshPro x, y, z, Yrot;
 
+    [SerializeField]
+    private MarkerController[] markers;
+
 
     private void Start()
     {
         //UnityEngine.XR.XRSettings.renderViewportScale = 0.7f;
+    }
+
+    private void ResetLine()
+    {
+        for (int i = 0; i < markers.Length; i++)
+        {
+            markers[i].ResetLine();
+        }
     }
 
     public void RecenterPlayArea()
@@ -35,6 +45,8 @@ public class CenterController : MonoBehaviour
 
         Vector3 rot = new Vector3(0, head.rotation.eulerAngles.y, 0);
         transform.eulerAngles = rot;
+
+        ResetLine();
     }
 
     public void AdjustX(SliderEventData data)
@@ -48,6 +60,8 @@ public class CenterController : MonoBehaviour
                                 adjuster.localPosition.z);
         adjuster.localPosition = h;
         x.text = $"{positionWidth * ratio:F2}";
+
+        ResetLine();
     }
 
     public void AdjustY(SliderEventData data)
@@ -61,6 +75,8 @@ public class CenterController : MonoBehaviour
                                 adjuster.localPosition.z);
         adjuster.localPosition = h;
         y.text = $"{positionWidth * ratio:F2}";
+
+        ResetLine();
     }
 
     public void AdjustZ(SliderEventData data)
@@ -74,6 +90,8 @@ public class CenterController : MonoBehaviour
                                 positionWidth * ratio);
         adjuster.localPosition = h;
         z.text = $"{positionWidth * ratio:F2}";
+
+        ResetLine();
     }
 
     public void AdjustRotate(SliderEventData data)
@@ -83,6 +101,8 @@ public class CenterController : MonoBehaviour
 
         adjuster.localRotation = Quaternion.Euler(0, rotationWidth * ratio, 0);
         Yrot.text = $"{rotationWidth * ratio:F2}";
+
+        ResetLine();
     }
 
     public void EnableStage(int stage)
@@ -93,5 +113,7 @@ public class CenterController : MonoBehaviour
         }
 
         stages[stage].SetActive(true);
+
+        ResetLine();
     }
 }
