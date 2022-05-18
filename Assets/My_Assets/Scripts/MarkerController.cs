@@ -15,6 +15,7 @@ public class MarkerController : MonoBehaviour
     {
         source = transform.root.GetComponent<AudioSource>();
         line = GetComponent<LineRenderer>();
+        ResetLine();
     }
 
     private void OnEnable()

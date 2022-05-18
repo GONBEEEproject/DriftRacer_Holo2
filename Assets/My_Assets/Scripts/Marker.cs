@@ -5,7 +5,7 @@ using UnityEngine;
 public class Marker : MonoBehaviour
 {
     [SerializeField]
-    private MeshRenderer laser;
+    private GameObject laser;
 
     [SerializeField]
     private Collider hit;
@@ -23,7 +23,8 @@ public class Marker : MonoBehaviour
     {
         hit.enabled = isActive;
 
-        laser.enabled = isActive;
+
+        laser.SetActive(isActive);
     }
 
     private void OnTriggerEnter(Collider other)
