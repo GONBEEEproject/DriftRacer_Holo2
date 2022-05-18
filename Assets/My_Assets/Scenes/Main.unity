@@ -3296,8 +3296,8 @@ MonoBehaviour:
   - {fileID: 308458629}
   - {fileID: 114508292}
   - {fileID: 671465333}
-  normalHit: {fileID: 0}
-  startHit: {fileID: 0}
+  normalHit: {fileID: 8300000, guid: 465a6a24f76b20746817efe51906d98e, type: 3}
+  startHit: {fileID: 8300000, guid: 570d5c84cf163914c8afdf35290ea64e, type: 3}
 --- !u!4 &611522163
 Transform:
   m_ObjectHideFlags: 0
@@ -3548,8 +3548,8 @@ MonoBehaviour:
   - {fileID: 648699468}
   - {fileID: 1061846848}
   - {fileID: 1071167377}
-  normalHit: {fileID: 0}
-  startHit: {fileID: 0}
+  normalHit: {fileID: 8300000, guid: 465a6a24f76b20746817efe51906d98e, type: 3}
+  startHit: {fileID: 8300000, guid: 570d5c84cf163914c8afdf35290ea64e, type: 3}
 --- !u!4 &644146972
 Transform:
   m_ObjectHideFlags: 0
@@ -7225,8 +7225,8 @@ MonoBehaviour:
   - {fileID: 560177517}
   - {fileID: 50036924}
   - {fileID: 1791696115}
-  normalHit: {fileID: 0}
-  startHit: {fileID: 0}
+  normalHit: {fileID: 8300000, guid: 465a6a24f76b20746817efe51906d98e, type: 3}
+  startHit: {fileID: 8300000, guid: 570d5c84cf163914c8afdf35290ea64e, type: 3}
 --- !u!120 &1617458956
 LineRenderer:
   m_ObjectHideFlags: 0
