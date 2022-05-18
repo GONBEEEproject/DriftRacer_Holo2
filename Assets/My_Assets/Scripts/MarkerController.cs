@@ -10,6 +10,9 @@ public class MarkerController : MonoBehaviour
     private AudioSource source;
     private LineRenderer line;
 
+    [SerializeField]
+    private AudioClip normalHit, startHit;
+
 
     private void Start()
     {
@@ -47,8 +50,16 @@ public class MarkerController : MonoBehaviour
     {
         markarChain[i].ChangeActivate(false);
 
+        if (i == 0)
+        {
+            source.PlayOneShot(startHit);
+        }
+        else
+        {
+            source.PlayOneShot(normalHit);
+        }
+
         int next = (i + 1) % markarChain.Length;
         markarChain[next].ChangeActivate(true);
-        source.PlayOneShot(source.clip);
     }
 }

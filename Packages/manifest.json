@@ -1,5 +1,9 @@
 {
   "dependencies": {
+    "com.microsoft.azure.spatial-anchors-sdk.android": "file:MixedReality/com.microsoft.azure.spatial-anchors-sdk.android-2.12.0.tgz",
+    "com.microsoft.azure.spatial-anchors-sdk.core": "file:MixedReality/com.microsoft.azure.spatial-anchors-sdk.core-2.12.0.tgz",
+    "com.microsoft.azure.spatial-anchors-sdk.ios": "file:MixedReality/com.microsoft.azure.spatial-anchors-sdk.ios-2.12.0.tgz",
+    "com.microsoft.azure.spatial-anchors-sdk.windows": "file:MixedReality/com.microsoft.azure.spatial-anchors-sdk.windows-2.12.0.tgz",
     "com.microsoft.mixedreality.openxr": "file:MixedReality/com.microsoft.mixedreality.openxr-1.4.0.tgz",
     "com.microsoft.mixedreality.toolkit.examples": "file:MixedReality/com.microsoft.mixedreality.toolkit.examples-2.7.3.tgz",
     "com.microsoft.mixedreality.toolkit.extensions": "file:MixedReality/com.microsoft.mixedreality.toolkit.extensions-2.7.3.tgz",
@@ -15,7 +19,11 @@
     "com.unity.timeline": "1.6.4",
     "com.unity.ugui": "1.0.0",
     "com.unity.visualscripting": "1.7.6",
+    "com.unity.xr.arcore": "4.2.3",
+    "com.unity.xr.arfoundation": "4.1.10",
+    "com.unity.xr.arkit": "4.1.10",
     "com.unity.xr.openxr": "1.4.1",
+    "com.unity.xr.windowsmr": "4.6.3",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
