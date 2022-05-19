@@ -14,11 +14,11 @@ public class MarkerController : MonoBehaviour
     private AudioClip normalHit, startHit;
 
 
-    private void Start()
+    private void Awake()
     {
         source = transform.root.GetComponent<AudioSource>();
         line = GetComponent<LineRenderer>();
-        ResetLine();
+        //ResetLine();
     }
 
     private void OnEnable()
@@ -30,7 +30,7 @@ public class MarkerController : MonoBehaviour
         }
         markarChain[0].ChangeActivate(true);
 
-        ResetLine();
+        //ResetLine();
     }
 
     public void ResetLine()

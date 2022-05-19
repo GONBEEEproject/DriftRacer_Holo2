@@ -21,17 +21,33 @@ public class CenterController : MonoBehaviour
     [SerializeField]
     private MarkerController[] markers;
 
-
-    private void Start()
+    private void Update()
     {
-        //UnityEngine.XR.XRSettings.renderViewportScale = 0.7f;
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            EnableStage(0);
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            EnableStage(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            EnableStage(2);
+        }
     }
 
     private void ResetLine()
     {
         for (int i = 0; i < markers.Length; i++)
         {
-            markers[i].ResetLine();
+            if (markers[i].gameObject.activeInHierarchy)
+            {
+                markers[i].ResetLine();
+            }
         }
     }
 
